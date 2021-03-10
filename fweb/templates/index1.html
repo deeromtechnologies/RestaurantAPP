@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<style >
+	body{text-align:center}</style>
+<head>
+	<meta charset="utf-8">
+	<title>Thai Restaurant</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index1.css">
+</head>
+<body>
+	
+<div class="loginbox">
+		<img src="avatar.png" class="avatar">
+		
+		<h1>Login Here</h1>
+		<form action="login" method="post">
+			<p>Username</p>
+			<input type="text" name="username" placeholder="Enter Username"><br>
+			<p>Password</p>
+			<input type="Password" name="password" placeholder="Enter Password"><br>
+			
+			<button type="submit">Login</button><br>
+			<a href="{{url_for('register')}}" >Don't have an account?</a>
+		</form></div>
+	
+
+</body>
+</html>

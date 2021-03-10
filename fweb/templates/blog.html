@@ -1,0 +1,166 @@
+<html>
+
+  <head>
+
+    <title>thairestaurant@gmail.com</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+  </head> 
+
+  <body class="header" style="background-image: url('img/combo.jpg')";>
+   <div class="overlay"> 
+   <nav class="navbar navbar-expand-lg navigation-light ">
+         <div class="container-fluid">
+          <img src="static/img/gall1.jpg" height=130px width=160px>
+  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <label class="logo"><h1>Thai Restaurant</h1></label>
+    <ul>
+      <li><a href="{{url_for('index')}}">Home</a></li>
+      <li><a href="{{url_for('about')}}">About Us</a></li>
+      <li><a href="{{url_for('contact')}}">Contact</a></li>
+      <li><a href="{{url_for('menu')}}">Menu</a></li>
+      
+      
+      <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+    </ul>
+         
+                  </div>
+                </div>
+            </nav>
+          </div>
+        </div>
+
+        </div>
+    </nav>
+
+    <div class="blog">
+ <div class="container">
+ <h1 class="text-center">Services</h1>
+  <div class="row">
+   <div class="col-md-4 col-lg-4 col-sm-12">
+    <div class="card">
+     <div class="card-img">
+      <img src="static/img/food4.jpg" class="img-fluid">
+     </div>
+     
+     <div class="card-body">
+     <h4 class="card-title">Influence of Thai food</h4>
+      <p class="card-text">
+       
+     The flavors found in modern-day Thailand come from ancient history. As early as the 13th century, the Thai people had established what might be considered the heart of Siamese cuisine as we know it today: various types of meat and seafood combined with rice, local vegetables, herbs, and pungent garlic and pepper. Later on, the Chinese brought noodles to Thailand, as well as the most important Thai cooking tool: the steel wok. 
+      </p>
+     </div>
+     <div class="card-footer">
+      <a href="" class="card-link">Read more</a>
+     </div>
+    </div>
+   </div>
+   <div class="col-md-4 col-lg-4 col-sm-12">
+    <div class="card">
+     <div class="card-img">
+      <img src="static/img/food3.jpg" class="img-fluid">
+     </div>
+     
+     <div class="card-body">
+        <h4 class="card-title">Presentataion</h4>
+      <p class="card-text">
+     The formal presentation of food is another important aspect of Thai culture. Attention to detail and how pretty it looks when served are relevant to the eating experience. Regardless of the beautiful flavors it provides, the dish has to look appealing, and this aspect honors the respect Thai culture has for its food and ingredients. Thai food presentation is among the most exquisite in the world; serving platters are decorated with all variety of flower-carved vegetables and fruits, palace-style stir-fries include elegantly carved vegetables within the dish itself. Chefs are trained in the art of carving because food needs an extra layer of attention beyond cooking and into the realm of the aesthetic. 
+      </p>
+     </div>
+     <div class="card-footer">
+      <a href="" class="card-link">Read more</a>
+     </div>
+    </div>
+   </div>
+   <div class="col-md-4 col-lg-4 col-sm-12">
+    <div class="card">
+     <div class="card-img">
+      <img src="static/img/food2.jpg" class="img-fluid">
+     </div>
+     
+     
+     <div class="card-footer">
+      
+     </div>
+    </div>
+   </div>
+   <div class="col-md-4 col-lg-4 col-sm-12">
+    <div class="card">
+     <div class="card-img">
+      <img src="static/img/food1.jpg" class="img-fluid">
+     </div>
+     
+     
+     <div class="card-footer">
+     
+     </div>
+    </div>
+   </div>
+   <div class="col-md-4 col-lg-4 col-sm-12">
+    <div class="card">
+     <div class="card-img">
+      <img src="static/img/gall11.jpg" class="img-fluid">
+     </div>
+     
+     
+     <div class="card-footer">
+      
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+
+    <div class="loginbox">
+    <img src="static/img/avatar.png" class="avatar">
+    
+    <h1>blog</h1>
+    <form action="blog" method="post">
+      <p>bid</p>
+      <input type="number" name="bid" placeholder="Enter bid"><br>
+      <p>uid</p>
+      <input type="number" name="uid" placeholder="Enter uid"><br>
+      <p>Username</p>
+      <input type="text" name="username" placeholder="Enter Username"><br>
+     
+      <p>about</p>
+      <input type="text" name="about" placeholder="about blog"><br>
+      <p>description</p>
+      <input type="text" name="description" placeholder="description"><br>
+      <button type="submit">submit</button><br>
+      
+    </form>
+
+    <section id="footer">
+    <div class="container">
+      <div class="row ">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+          <ul class="list-unstyled list-inline social text-center">
+            <li class="list-inline-item"><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="500.html"><i class="fa fa-google-plus"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+          <ul class="list-unstyled list-inline social text-center text-white">
+            <li class="list-inline-item">✆ +91 9876 5432 10</li>
+            <li class="list-inline-item">✉ thairestaurant@gmail.com</li>
+          </ul>
+        </div>
+      </div>  
+    </div>
+  </section>
+
+    
+  </body>
+
+</html>

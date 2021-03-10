@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+      
+      
+      
+      <h3><a href = "{{ url_for('blog') }}">Add User</a></h3>
+      
+      <table border='3'>
+         <thead>
+            <tr>
+               <th>bid</th>
+               <th>uid</th>
+
+               <th>Username</th>
+               
+               <th>datecreated</th>
+               <th>about</th>
+               <th>description</th>
+               
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for user in result  %}
+               <tr>
+                  <td>{{ user.bid }}</td>
+                  <td>{{ user.uid }}</td>
+                  <td>{{ user.username }}</td>
+                 
+                  <td>{{ user.datecreated }}</td>
+                  
+                  <td>{{ user.about}}</td>
+                  <td>{{ user.description}}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+</html>

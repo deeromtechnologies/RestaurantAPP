@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+      
+      
+      
+      <h3><a href = "{{ url_for('register') }}">Add User</a></h3>
+      
+      <table border='3'>
+         <thead>
+            <tr>
+               <th>user id</th>
+               <th>Username</th>
+               
+               <th>email</th>
+               <th>password</th>
+               <th>number</th>
+               
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for user in result  %}
+               <tr>
+                  <td>{{ user.uid }}</td>
+                  <td>{{ user.username }}</td>
+                 
+                  <td>{{ user.email }}</td>
+                  
+                  <td>{{ user.password}}</td>
+                  <td>{{ user.number}}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+</html>

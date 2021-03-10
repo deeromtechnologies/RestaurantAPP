@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
+</head>
+<body>
+		<div class="loginbox">
+		<img src="static/img/avatar.png" class="avatar">
+		
+		<h1>Register</h1>
+		<form action="register" method="post">
+			<p>uid</p>
+			<input type="number" name="uid" placeholder="Enter uid"><br>
+			<p>Username</p>
+			<input type="text" name="username" placeholder="Enter Username"><br>
+			<p>Email</p>
+			<input type="email" name="email" placeholder="Enter mailid"><br>
+			<p>Password</p>
+			<input type="Password" name="password" placeholder="Enter Password"><br>
+			<p>Mob Number</p>
+			<input type="number" name="number" placeholder="Mobile Number"><br>
+			<button type="submit">Register</button><br>
+			
+		</form>
+
+
+</body>
+</html>
