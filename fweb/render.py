@@ -1,7 +1,11 @@
 from flask import Flask,render_template,redirect,url_for,session,request,flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import date
-#import pdb
+from flask_wtf import FlaskForm
+from wtforms import Form, BooleanField, StringField, PasswordField, validators,IntegerField
+from wtforms.validators import DataRequired
+
+import pdb
 app = Flask(__name__)
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = ("sqlite:///test3.db")
@@ -9,6 +13,16 @@ db = SQLAlchemy(app)
 
 
 app.secret_key="564#654"
+
+
+class MyForm(FlaskForm):
+	uid = IntegerField('id',validators=[DataRequired()])
+	username = StringField('Username', [validators.Length(min=4, max=25)])
+	email = StringField('Email Address', [validators.Length(min=6, max=35)])
+	password = PasswordField('New Password', [validators.DataRequired(),validators.EqualTo('confirm', message='Passwords must match')])
+	confirm = PasswordField('Repeat Password')
+	number= IntegerField('Number')
+    
 
 class Register(db.Model):
 	uid = db.Column(db.Integer, primary_key=True)
@@ -41,6 +55,21 @@ def __init__(self,bid,uid,username,datecreated,about,description):
 	self.about = about
 	self.description = description
 date=date.today()
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+	#pdb.set_trace()
+	form = MyForm(request.form)
+	if request.method=='POST' and form.validate_on_submit():
+	 	
+	 	regi=Register(uid=form.uid.data,username=form.username.data,email=form.email.data,password=form.password.data,number=form.number.data)
+	 	#print(signup.username)
+	 	db.session.add(regi)
+	 	db.session.commit()
+	 	return redirect(url_for('showall'))
+	return render_template('register.html', form=form)
+
+
 @app.route('/showall')
 def showall():
 	result1=Register.query.all()
@@ -53,6 +82,11 @@ def detailpage(uid):
 def dess():
 	ress=Blog.query.all()
 	return render_template('dess.html',result=ress)
+@app.route('/edit')
+def edit():
+	return render_template('update')
+
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -86,17 +120,17 @@ def blog():
 	else:
 		return render_template("blog.html")
 
-@app.route("/register",methods=['GET','POST'])
-def register():
+#@app.route("/register",methods=['GET','POST'])
+#def register():
 	#pdb.set_trace()
-	if request.method =="POST":
-		reg=Register(uid=request.form['uid'],username=request.form['username'],email=request.form['email'],password=request.form['password'],number=request.form['number'])
-		db.session.add(reg)
-		db.session.commit()
+#	if request.method =="POST":
+#		reg=Register(uid=request.form['uid'],username=request.form['username'],email=request.form['email'],password=request.form['password'],number=request.form['number'])
+#		db.session.add(reg)
+#		db.session.commit()
 
-		return redirect(url_for('showall'))
-	else:
-		return render_template("register.html")
+#		return redirect(url_for('showall'))
+#	else:
+#		return render_template("register.html")
 
 
 @app.route('/login',methods=['GET','POST'])
