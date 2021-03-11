@@ -13,8 +13,11 @@ app.config['DEBUG'] =True
 app.config['TESTING'] = False
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = '***'
-app.config['MAIL_PASSWORD'] = '****'
+
+
+app.config['MAIL_USERNAME'] = '******'
+app.config['MAIL_PASSWORD'] = '*****'
+
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_MAX_EMAILS'] = None
@@ -117,7 +120,11 @@ def register():
 	form = MyForm(request.form)
 	if request.method=='POST' and form.validate_on_submit():
 		email=form.email.data
+<<<<<<< HEAD
 		msg = Message("Hello",sender="***",recipients=[email])
+=======
+		msg = Message("Hello",sender="*****",recipients=[email])
+>>>>>>> d639615d6a311ee824003659223cad60427a00fb
 		msg.body = "Thank you for registering with us"
 		mail.send(msg)
 		regi=Register(uid=form.uid.data,username=form.username.data,email=form.email.data,password=form.password.data,number=form.number.data)
