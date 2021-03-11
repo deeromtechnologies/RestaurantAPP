@@ -13,8 +13,8 @@ app.config['DEBUG'] =True
 app.config['TESTING'] = False
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'snehanair264@gmail.com'
-app.config['MAIL_PASSWORD'] = '7907198335'
+app.config['MAIL_USERNAME'] = '***'
+app.config['MAIL_PASSWORD'] = '****'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_MAX_EMAILS'] = None
@@ -99,7 +99,17 @@ def update(bid):
 		return f"User with id = {bid} Does not exist"
 	return render_template('update.html', emp = emp)
 
-
+@app.route('/blog/<int:bid>/delete',methods=["GET","POST"])
+def delete(bid):
+	form=BForm(request.form)
+	emp1=Blog.query.filter_by(bid=bid).first()
+	if request.method=="POST":
+		if emp1:
+			db.session.delete(emp1)
+			db.session.commit()
+			return redirect(url_for('dess'))
+		abort(404)
+	return render_template('delete.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -107,7 +117,7 @@ def register():
 	form = MyForm(request.form)
 	if request.method=='POST' and form.validate_on_submit():
 		email=form.email.data
-		msg = Message("Hello",sender="snehanair264@gmail.com",recipients=[email])
+		msg = Message("Hello",sender="***",recipients=[email])
 		msg.body = "Thank you for registering with us"
 		mail.send(msg)
 		regi=Register(uid=form.uid.data,username=form.username.data,email=form.email.data,password=form.password.data,number=form.number.data)
