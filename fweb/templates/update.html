@@ -5,23 +5,21 @@
       
       
       
-      <h3><a href = "{{ url_for('register') }}">Add User</a></h3>
-      
+   
     
       <div class="loginbox">
       <img src="static/img/avatar.png" class="avatar">
       
       <h1>Edit</h1>
       <form action="update" method="post">
-         
-         <p>Old Username</p>
-         <input type="text" name="username" placeholder="Enter Username"><br>
-         <p>New Username</p>
-         <input type="text" name="newusername" placeholder="Enter Username"><br>
-         
-         <button type="submit">Register</button><br>
-         
+         <p>uid<input type = "integer" name = "uid" value="{{emp.uid}}"/></p>
+         <p>username<input type = "text" name = "username" value="{{emp.username}}"/></p>
+         <p>about <input type = "text" name = "about" value="{{emp.about}}"/></p>
+         <p>description<input type = "text" name = "description" value="{{emp.description}}"/></p>
+        <p><input type = "submit" value = "Submit" /></p>
       </form>
 </div>
 </body>
 </html>
+
+

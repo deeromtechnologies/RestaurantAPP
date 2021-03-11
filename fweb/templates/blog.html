@@ -125,17 +125,18 @@
     
     <h1>blog</h1>
     <form action="blog" method="post">
-      <p>bid</p>
-      <input type="number" name="bid" placeholder="Enter bid"><br>
-      <p>uid</p>
-      <input type="number" name="uid" placeholder="Enter uid"><br>
-      <p>Username</p>
-      <input type="text" name="username" placeholder="Enter Username"><br>
-     
-      <p>about</p>
-      <input type="text" name="about" placeholder="about blog"><br>
-      <p>description</p>
-      <input type="text" name="description" placeholder="description"><br>
+      {{ form.csrf_token }}
+      
+      <label for="bid">{{ form.bid.label }}</label><br>
+      {{ form.bid() }}<br>
+      <label for="uid">{{ form.uid.label }}</label><br>
+      {{ form.uid() }}<br>
+      <label for="username">{{ form.username.label }}</label><br>
+      {{ form.username() }}<br>
+      <label for="about">{{ form.about.label }}</label><br>
+      {{ form.about() }}<br>
+      <label for="description">{{ form.description.label }}</label><br>
+      {{ form.description() }}<br>
       <button type="submit">submit</button><br>
       
     </form>
