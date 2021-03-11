@@ -107,7 +107,7 @@ def register():
 	form = MyForm(request.form)
 	if request.method=='POST' and form.validate_on_submit():
 		email=form.email.data
-		msg = Message("Hello",sender="snehanair264@gmail.com",recipients=[email])
+		msg = Message("Hello",sender="*****",recipients=[email])
 		msg.body = "Thank you for registering with us"
 		mail.send(msg)
 		regi=Register(uid=form.uid.data,username=form.username.data,email=form.email.data,password=form.password.data,number=form.number.data)
