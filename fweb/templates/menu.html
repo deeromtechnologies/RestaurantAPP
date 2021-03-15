@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Menu</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static',filename='menu.css')}}">
+</head>
+<body>
+		<nav>
+		<label class="logo"><h1>Thai Restaurant</h1></label>
+		<ul>
+			<li><a href="{{url_for('index')}}">Home</a></li>
+			<li><a href="{{url_for('about')}}">About Us</a></li>
+			<li><a href="{{url_for('contact')}}">Contact</a></li>
+			<li><a href="{{url_for('menu')}}">Menu</a></li>
+			
+			<li><a href="{{url_for('gallery')}}">Gallery</a></li>
+			<li><a href="{{url_for('blog')}}">Blog</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<div class="gallery">
+			<img src="static/img/food1.jpg">
+			<div class="desc">food name and price</div>
+		</div>
+		<div class="gallery">
+			<img src="static/img/food2.jpg">
+			<div class="desc">food name and price</div>
+		</div>
+		<div class="gallery">
+			<img src="static/img/food3.jpg">
+			<div class="desc">food name and price</div>
+		</div>
+		<div class="gallery">
+			<img src="static/img/food6.jpg">
+			<div class="desc">food name and price</div>
+		</div>
+				<div class="gallery">
+			<img src="static/img/food4.jpg">
+			<div class="desc">food name and price</div>
+		</div>
+				<div class="gallery">
+			<img src="static/img/food7.jpeg">
+			<div class="desc">food name and price</div>
+		</div>
+
+		
+	</div>
+
+</body>
+</html>

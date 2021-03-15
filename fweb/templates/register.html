@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
+</head>
+<body>
+		<div class="loginbox">
+		<img src="static/img/avatar.png" class="avatar">
+		
+		<h1>Register</h1>
+		<form action="register" method="post">
+			{{ form.csrf_token }}
+			
+			<label for="uid">{{ form.uid.label }}</label><br>
+			{{ form.uid() }}<br>
+			<label for="username">{{ form.username.label }}</label><br>
+			{{ form.username() }}<br>
+			<label for="email">{{ form.email.label }}</label><br>
+			{{ form.email() }}<br>
+			<label for="Password">{{ form.password.label }}</label><br>
+			{{ form.password() }}<br>
+			<label for="confirm">{{ form.confirm.label }}</label><br>
+			{{ form.confirm() }}<br>
+			<label for="number">{{ form.number.label }}</label><br>
+			{{ form.number() }}<br>
+
+			<button type="submit">Register</button><br>
+			
+		</form>
+
+
+</body>
+</html>

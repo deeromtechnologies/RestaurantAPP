@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+
+<h3><a href="{{url_for('register')}}">Add user</a></h3>
+<table border="3">
+<thead>
+<tr>
+<th>uid</th>
+<th>username</th>
+
+<th>email</th>
+<th>password</th>
+<th>number</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>{{result.uid}}</td>
+
+<td>{{result.username}}</td>
+<td>{{result.email}}</td>
+<td>{{result.password}}</td>
+<td>{{result.number}}</td>
+</tr>
+
+</tbody>
+</table>
+</body>
+</html>
