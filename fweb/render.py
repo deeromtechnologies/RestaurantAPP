@@ -112,7 +112,7 @@ def login():
 		if not user or not (user.password==password):
 		#if login is not None:
 			return "check login credential"
-		return(redirect(url_for("blog",username=username)))
+		return render_template("profile.html",username=username)
 
 
 		#login_user(user)
@@ -171,7 +171,7 @@ def register():
 		db.session.add(regi)
 		db.session.commit()
 		result=Register.query.all()
-		return redirect(url_for('showall',result=result))
+		return redirect(url_for('index',result=result))
 	return render_template('register.html', form=form)
 
 
